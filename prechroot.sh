@@ -4,13 +4,6 @@
 timedatectl set-ntp true
 echo "set timedate"
 
-# connect to internet
-SSID=
-PASSPHRASE=
-INTERFACE=
-iwctl --passphrase $PASSPHRASE station $INTERFACE connect $SSID
-echo "connected to internet via $SSID"
-
 # format partitions
 mkfs.ext4 /dev/sda3
 mkswap /dev/sda2
@@ -19,14 +12,22 @@ echo "formatted partitions"
 
 # mount filesystems
 mount /dev/sda3 /mnt
+mkdir /mnt/efi
+mount /dev/sda1 /mnt/efi
 swapon /dev/sda2
-echp "mounted filesystems"
+echo "mounted filesystems"
 
 # pacstrap
-packages=( base base-devel linux-firmware linux-lts neovim man-db man-pages
-            tex-info sudo networkmanager network-manager-applet dhcp 
-            xorg-server xorg-apps
-            xorg-xinit alacritty ttf-jetbrains-mono rofi 
+packages=( base git linux-firmware linux-lts neovim man-db man-pages
+            texinfo sudo networkmanager network-manager-applet dhcp 
+            xorg-server xorg-apps firefox xdg-user-dirs
+            noto-fonts noto-fonts-emoji noto-fonts-extra
+            xorg-xinit alacritty ttf-jetbrains-mono rofi xfce4
+            xfce4-goodies pulseaudio pavucontrol
+            blueberry bluez bluez-utils dunst flameshot copyq
+            sxhkd peek mpv simple-scan vi
+            arc-gtk-theme arc-icon-theme papirus-icon-theme
+            gvfs
             )
 echo "gonna install ${pages[@]}"
 

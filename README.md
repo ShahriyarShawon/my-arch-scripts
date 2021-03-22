@@ -1,7 +1,7 @@
 # Shays Arch installation scripts
 
 ## What the user has to do before running prechroot
-- edit ssid passphrase and interface in prechroot
+- select proper locale(s) in /etc/locale.gen
 - partition disks
 
 ## What the user has to do after running prechroot
@@ -10,6 +10,11 @@
 - set time zone
 - edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8
 - set passwd
+
+## What to do after chroot
+- install a desktop environment
+- install base-devel if you want to use aur (you probably do)
+
 
 ## What prechroot does for you
 - update system clock
