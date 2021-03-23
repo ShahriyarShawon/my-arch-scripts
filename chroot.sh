@@ -6,6 +6,7 @@ echo "ran hwclock"
 
 # generate locale
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
+locale-gen
 echo "Generated Locale"
 
 HOSTNAME="archthinkpad"

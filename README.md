@@ -1,8 +1,12 @@
 # Shays Arch installation scripts
 
 ## What the user has to do before running prechroot
-- select proper locale(s) in /etc/locale.gen
 - partition disks
+- connect to internet
+    - I use wlan0 and I know my network SSID so I'd run:
+    iwctl --passphrase PASSPHRASE station wlan0 connect SSID
+    - Here's the general command
+    iwctl --passphrase PASSPHRASE station DEVICE connect SSID
 
 ## What the user has to do after running prechroot
 - arch-chroot /mnt

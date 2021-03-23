@@ -31,7 +31,6 @@ packages=( base git linux-firmware linux-lts neovim man-db man-pages
             )
 echo "gonna install ${packages[@]}"
 
-# pacstrap
 pacstrap /mnt "${packages[@]}"
 
 # gen fstab
