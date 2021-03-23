@@ -21,15 +21,15 @@ echo "mounted filesystems"
 packages=( base git linux-firmware linux-lts neovim man-db man-pages
             texinfo sudo networkmanager network-manager-applet dhcp 
             xorg-server xorg-apps firefox xdg-user-dirs
-            noto-fonts noto-fonts-emoji noto-fonts-extra
+            noto-fonts noto-fonts-emoji noto-fonts-extra noto-fonts-cjk
             xorg-xinit alacritty ttf-jetbrains-mono rofi xfce4
             xfce4-goodies pulseaudio pavucontrol
             blueberry bluez bluez-utils dunst flameshot copyq
             sxhkd peek mpv simple-scan vi
             arc-gtk-theme arc-icon-theme papirus-icon-theme
-            gvfs
+            gvfs htop
             )
-echo "gonna install ${pages[@]}"
+echo "gonna install ${packages[@]}"
 
 # pacstrap
 pacstrap /mnt "${packages[@]}"
