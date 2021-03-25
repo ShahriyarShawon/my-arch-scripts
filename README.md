@@ -13,10 +13,11 @@
 - set hostname
 - set time zone
 - edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8
-- set passwd
+  and any other locales that are needed
+- set passwd with `passwd` command
 
 ## What to do after chroot
-- install a desktop environment
+- install a desktop environment (xfce is in the chroot)
 - install base-devel if you want to use aur (you probably do)
 
 

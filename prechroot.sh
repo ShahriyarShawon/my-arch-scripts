@@ -27,8 +27,10 @@ packages=( base git linux-firmware linux-lts neovim man-db man-pages
             blueberry bluez bluez-utils dunst flameshot copyq
             sxhkd peek mpv simple-scan vi
             arc-gtk-theme arc-icon-theme papirus-icon-theme
-            gvfs htop
-            )
+            gvfs htop grub efibootmgr vim ghostscript atril okular
+            gthumb
+         
+         )
 echo "gonna install ${packages[@]}"
 
 pacstrap /mnt "${packages[@]}"
